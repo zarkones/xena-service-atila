@@ -47,7 +47,7 @@ const databaseConfig: DatabaseConfig = {
         password: databaseUrl ? databaseUrl.user.split(':')[1] : Env.get('PG_PASSWORD'),
         database: databaseUrl ? databaseUrl.pathname.substr(1) : Env.get('PG_DB_NAME'),
         ssl: {
-          checkServerIdentity: false,
+          rejectUnauthorized: false,
         },
       },
       migrations: {
